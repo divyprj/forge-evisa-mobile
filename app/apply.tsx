@@ -60,8 +60,8 @@ export default function ApplyScreen() {
         <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={s.scrollContent}>
           {/* Title */}
           <Eyebrow>Normal e‑Business Visa</Eyebrow>
-          <Text style={s.pageTitle}>Let's get you to India.</Text>
-          <Text style={s.pageSub}>You'll need your passport, a recent photograph and business evidence. Most people finish in about 10 minutes.</Text>
+          <Text style={s.pageTitle}>Let{"\u2019"}s get you to India.</Text>
+          <Text style={s.pageSub}>You{"\u2019"}ll need your passport, a recent photograph and business evidence. Most people finish in about 10 minutes.</Text>
 
           {/* Progress */}
           <ProgressBar currentStep={step} submitted={submitted} steps={STEPS} />
@@ -113,7 +113,7 @@ export default function ApplyScreen() {
               {step === 2 && !submitted && (
                 <View>
                   <Text style={s.formTitle}>Your business visit</Text>
-                  <Text style={s.formIntro}>Tell us why you're travelling and who you'll meet in India.</Text>
+                  <Text style={s.formIntro}>Tell us why you{"\u2019"}re travelling and who you{"\u2019"}ll meet in India.</Text>
                   <View style={s.formGrid}>
                     <FormField label="Primary business activity" placeholder="Business meetings or negotiations" full />
                     <FormField label="Your employer" placeholder="Northstar Labs Ltd" />
@@ -138,7 +138,7 @@ export default function ApplyScreen() {
               {step === 3 && !submitted && (
                 <View>
                   <Text style={s.formTitle}>Your documents</Text>
-                  <Text style={s.formIntro}>Use clear, current files. We'll show the status of each one before you continue.</Text>
+                  <Text style={s.formIntro}>Use clear, current files. We{"\u2019"}ll show the status of each one before you continue.</Text>
                   {([
                     { key: 'passport' as const, icon: '▣', label: 'Passport bio page', sub: 'JPG, PNG or PDF · maximum 5 MB' },
                     { key: 'photo' as const, icon: '◉', label: 'Recent photograph', sub: 'Front-facing · white background' },
@@ -193,7 +193,7 @@ export default function ApplyScreen() {
                   </View>
                   <View style={s.advisory}>
                     <Text style={s.advisoryStrong}>No emergency or express fee.</Text>
-                    <Text style={s.advisoryText}>India's official advisory states there is no additional emergency charge for granting an eVisa.</Text>
+                    <Text style={s.advisoryText}>India{"\u2019"}s official advisory states there is no additional emergency charge for granting an eVisa.</Text>
                   </View>
                   <View style={s.consentRow}>
                     <Switch
@@ -245,8 +245,8 @@ export default function ApplyScreen() {
                 <View style={s.success}>
                   <View style={s.successIcon}><Text style={s.successCheck}>✓</Text></View>
                   <Eyebrow>Application received</Eyebrow>
-                  <Text style={s.successTitle}>We'll take it from here.</Text>
-                  <Text style={s.successDesc}>Your reference has been sent by email. Keep it close—you'll use it to track payment, document review and the decision.</Text>
+                  <Text style={s.successTitle}>We{"\u2019"}ll take it from here.</Text>
+                  <Text style={s.successDesc}>Your reference has been sent by email. Keep it close{"\u2014"}you{"\u2019"}ll use it to track payment, document review and the decision.</Text>
                   <TouchableOpacity style={s.refBtn} onPress={copyRef}>
                     <Text style={s.refText}>IND-BIZ-26-7K92 ⧉</Text>
                   </TouchableOpacity>

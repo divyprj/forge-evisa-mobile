@@ -139,7 +139,7 @@ export default function HomeScreen() {
             <View style={s.quickPad}>
               <Eyebrow>Check your route</Eyebrow>
               <Text style={[s.sectionTitle, { marginTop: 10, marginBottom: 8 }]}>Three answers.{'\n'}One clear next step.</Text>
-              <Text style={s.bodyMuted}>We'll use your passport, travel purpose and arrival date to point you to the right application path.</Text>
+              <Text style={s.bodyMuted}>We{"\u2019"}ll use your passport, travel purpose and arrival date to point you to the right application path.</Text>
               <View style={{ height: 18 }} />
               <Button title="See my route →" onPress={() => { setShowRoute(true); showToast('Your recommended route is ready'); }} fullWidth />
               {showRoute && (
@@ -162,7 +162,7 @@ export default function HomeScreen() {
         {/* ── Stats ── */}
         <View style={[s.section, s.sectionSand]}>
           <Eyebrow>The normal business route</Eyebrow>
-          <Text style={[s.sectionTitle, { marginTop: 10, marginBottom: 6 }]}>Built around the trip you're actually making.</Text>
+          <Text style={[s.sectionTitle, { marginTop: 10, marginBottom: 6 }]}>Built around the trip you{"\u2019"}re actually making.</Text>
           <Text style={[s.bodyMuted, { marginBottom: 24 }]}>For business meetings, supplier visits, trade, recruitment, board meetings and other eligible commercial activity.</Text>
           <View style={s.statsRow}>
             {[['365', 'days of validity from the grant of ETA'], ['∞', 'multiple entries during the validity period'], ['180', 'maximum continuous stay on each visit']].map(([n, d]) => (
@@ -180,7 +180,7 @@ export default function HomeScreen() {
           <Text style={[s.sectionTitle, { color: '#fff', marginTop: 10, marginBottom: 6 }]}>From passport to permission.</Text>
           <Text style={[s.bodyMuted, { color: '#bac8c1', marginBottom: 28 }]}>Save your progress at every step, return when you need, and always know what happens next.</Text>
           {[
-            { n: '01', t: 'Apply', d: 'Tell us about yourself, your trip and the Indian organisation you'll visit.' },
+            { n: '01', t: 'Apply', d: "Tell us about yourself, your trip and the Indian organisation you'll visit." },
             { n: '02', t: 'Upload', d: 'Add your passport, photograph and business evidence with clear visual guidance.' },
             { n: '03', t: 'Pay', d: 'Review the nationality-specific visa fee and transaction charge before paying.' },
             { n: '04', t: 'Receive', d: 'Track the decision, respond to document requests and receive ETA by email.' },
@@ -252,7 +252,7 @@ export default function HomeScreen() {
 
         {/* ── CTA Band ── */}
         <View style={s.ctaBand}>
-          <Text style={s.ctaTitle}>India is waiting. The paperwork shouldn't be.</Text>
+          <Text style={s.ctaTitle}>India is waiting. The paperwork shouldn{"\u2019"}t be.</Text>
           <Text style={s.ctaDesc}>Start with the normal business route and know what you need before you type a single passport number.</Text>
           <Button title="Start your application ↗" variant="light" onPress={() => router.push('/apply')} style={{ marginTop: 20 }} />
         </View>

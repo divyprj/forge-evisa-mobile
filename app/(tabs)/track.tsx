@@ -53,7 +53,7 @@ export default function TrackScreen() {
           <View style={s.lookup}>
             <Eyebrow>Application status</Eyebrow>
             <Text style={s.pageTitle}>Know where you stand.</Text>
-            <Text style={s.bodyMuted}>Enter the reference sent to your email. You'll see payment, document review, any action needed and your decision in one place.</Text>
+            <Text style={s.bodyMuted}>Enter the reference sent to your email. You{"\u2019"}ll see payment, document review, any action needed and your decision in one place.</Text>
 
             <Card style={s.lookupCard}>
               <View style={s.lookupPad}>
