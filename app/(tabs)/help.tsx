@@ -105,7 +105,7 @@ export default function HelpScreen() {
           </View>
 
           <View style={s.footerMin}>
-            <Text style={s.footerCopy}>© {new Date().getFullYear()} Forge eVisa</Text>
+            <Text style={s.footerCopy}>© {new Date().getFullYear()} e-Visa India</Text>
             <Text style={s.footerDisc}>Never share payment OTPs or passwords with anyone claiming to process your visa.</Text>
           </View>
         </View>

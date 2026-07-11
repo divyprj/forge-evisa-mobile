@@ -125,7 +125,7 @@ export default function EligibilityScreen() {
 
           {/* Footer */}
           <View style={s.footerMin}>
-            <Text style={s.footerCopy}>© {new Date().getFullYear()} Forge eVisa</Text>
+            <Text style={s.footerCopy}>© {new Date().getFullYear()} e-Visa India</Text>
             <Text style={s.footerDisc}>Requirements summarised from Indian Visa Online. Confirm final eligibility with official guidance.</Text>
           </View>
         </View>

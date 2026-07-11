@@ -1,11 +1,11 @@
 {
   "expo": {
-    "name": "Forge eVisa",
-    "slug": "forge-evisa",
+    "name": "e-Visa India",
+    "slug": "evisa-india",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
-    "scheme": "forge-evisa",
+    "scheme": "evisa-india",
     "userInterfaceStyle": "light",
     "ios": {
       "supportsTablet": true,

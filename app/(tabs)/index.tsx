@@ -49,14 +49,27 @@ export default function HomeScreen() {
                 <Text style={s.annText}>No emergency or express eVisa fee is charged.</Text>
               </View>
 
-              {/* Brand */}
-              <View style={s.brand}>
-                <Text style={s.brandMark}>✦</Text>
-                <View>
-                  <Text style={s.brandName}>Forge</Text>
-                  <Text style={s.brandSub}>INDIA EVISA</Text>
+              {/* Brand (Official Government Headers) */}
+              <View style={s.officialHeaderRow}>
+                <Image
+                  source={require('../../assets/images/boi_2logo.png')}
+                  style={{ width: 45, height: 45 }}
+                  resizeMode="contain"
+                />
+                <View style={{ alignItems: 'center' }}>
+                  <Image
+                    source={require('../../assets/images/emblem.png')}
+                    style={{ width: 28, height: 42 }}
+                    resizeMode="contain"
+                  />
                 </View>
+                <Image
+                  source={require('../../assets/images/e-visa-logo.png')}
+                  style={{ width: 60, height: 45 }}
+                  resizeMode="contain"
+                />
               </View>
+
 
               <View style={{ height: 32 }} />
               <Eyebrow light>Indian e‑Business Visa</Eyebrow>
@@ -260,8 +273,12 @@ export default function HomeScreen() {
         {/* ── Footer ── */}
         <View style={s.footer}>
           <View style={s.footerBrand}>
-            <Text style={[s.brandMark, { color: Colors.clay }]}>✦</Text>
-            <Text style={[s.brandName, { color: '#fff' }]}>Forge</Text>
+            <Image
+              source={require('../../assets/images/e-visa-logo.png')}
+              style={{ width: 60, height: 40 }}
+              resizeMode="contain"
+            />
+            <Text style={[s.brandName, { color: '#fff', marginLeft: 8 }]}>e-Visa India</Text>
           </View>
           <Text style={s.footerDesc}>A clearer way to understand and complete the Indian eVisa journey.</Text>
           <View style={s.footerLinks}>
@@ -271,7 +288,7 @@ export default function HomeScreen() {
             <TouchableOpacity onPress={() => router.push('/(tabs)/help')}><Text style={s.footerLink}>Help centre</Text></TouchableOpacity>
           </View>
           <View style={s.footerBottom}>
-            <Text style={s.footerCopy}>© {new Date().getFullYear()} Forge eVisa</Text>
+            <Text style={s.footerCopy}>© {new Date().getFullYear()} e-Visa India</Text>
             <Text style={s.footerDisclaimer}>Travel requirements can change. Confirm final requirements with the relevant official authority.</Text>
           </View>
         </View>
@@ -293,6 +310,7 @@ const s = StyleSheet.create({
   announcement: { flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: 8, paddingVertical: 8, marginBottom: 16, marginHorizontal: -Spacing.containerPadding, paddingHorizontal: Spacing.containerPadding, backgroundColor: 'rgba(23,63,53,0.5)' },
   annDot: { width: 6, height: 6, borderRadius: 3, backgroundColor: '#a8c298' },
   annText: { color: '#dce9e3', fontSize: 11 },
+  officialHeaderRow: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', marginTop: 8, paddingBottom: 12, borderBottomWidth: 1, borderBottomColor: 'rgba(255,255,255,0.1)' },
   brand: { flexDirection: 'row', alignItems: 'center', gap: 10, marginTop: 8 },
   brandMark: { fontSize: 24, color: Colors.clay },
   brandName: { fontSize: 16, fontWeight: '800', color: '#fff', letterSpacing: -0.5 },

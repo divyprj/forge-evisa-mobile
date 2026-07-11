@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import {
   View, Text, ScrollView, StyleSheet, TextInput,
-  TouchableOpacity, Switch, Platform,
+  TouchableOpacity, Switch, Platform, Image,
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useRouter } from 'expo-router';
@@ -45,10 +45,14 @@ export default function ApplyScreen() {
         {/* App Header */}
         <View style={s.appHeader}>
           <View style={s.brandRow}>
-            <Text style={s.brandMark}>✦</Text>
+            <Image
+              source={require('../assets/images/e-visa-logo.png')}
+              style={{ width: 45, height: 30 }}
+              resizeMode="contain"
+            />
             <View>
-              <Text style={s.brandName}>Forge</Text>
-              <Text style={s.brandSub}>INDIA EVISA</Text>
+              <Text style={s.brandName}>e-Visa India</Text>
+              <Text style={s.brandSub}>Official Portal</Text>
             </View>
           </View>
           <Text style={s.secureLabel}>◈ Secure application</Text>

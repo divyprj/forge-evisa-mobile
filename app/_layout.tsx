@@ -1,7 +1,10 @@
 // Forge eVisa — Root Layout
 import { Stack } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
+import { LogBox } from 'react-native';
 import Toast from '@/src/components/Toast';
+
+LogBox.ignoreAllLogs();
 
 export default function RootLayout() {
   return (

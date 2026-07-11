@@ -1,6 +1,6 @@
 // Forge eVisa — Digital ETA Screen
 import React from 'react';
-import { View, Text, ScrollView, StyleSheet, TouchableOpacity } from 'react-native';
+import { View, Text, ScrollView, StyleSheet, TouchableOpacity, Image } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useRouter } from 'expo-router';
 import { LinearGradient } from 'expo-linear-gradient';
@@ -41,10 +41,14 @@ export default function EtaScreen() {
             {/* Top */}
             <View style={s.etaTop}>
               <View style={s.etaBrand}>
-                <Text style={[s.brandMark, { color: '#fff' }]}>✦</Text>
-                <View>
-                  <Text style={s.etaBrandName}>Forge</Text>
-                  <Text style={s.etaBrandSub}>INDIA EVISA</Text>
+                <Image
+                  source={require('../assets/images/e-visa-logo.png')}
+                  style={{ width: 45, height: 30 }}
+                  resizeMode="contain"
+                />
+                <View style={{ marginLeft: 8 }}>
+                  <Text style={s.etaBrandName}>e-Visa India</Text>
+                  <Text style={s.etaBrandSub}>Official Portal</Text>
                 </View>
               </View>
               <View style={s.approvedBadge}>

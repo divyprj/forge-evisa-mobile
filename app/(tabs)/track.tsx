@@ -1,6 +1,6 @@
 // Forge eVisa — Track Screen
 import React, { useState } from 'react';
-import { View, Text, ScrollView, StyleSheet, TextInput, TouchableOpacity } from 'react-native';
+import { View, Text, ScrollView, StyleSheet, TextInput, TouchableOpacity, Image } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useRouter } from 'expo-router';
 import { Colors } from '@/src/theme/colors';
@@ -41,10 +41,14 @@ export default function TrackScreen() {
           {/* Header */}
           <View style={s.header}>
             <View style={s.brandRow}>
-              <Text style={s.brandMark}>✦</Text>
-              <View>
-                <Text style={s.brandName}>Forge</Text>
-                <Text style={s.brandSub}>INDIA EVISA</Text>
+              <Image
+                source={require('../../assets/images/e-visa-logo.png')}
+                style={{ width: 45, height: 30 }}
+                resizeMode="contain"
+              />
+              <View style={{ marginLeft: 8 }}>
+                <Text style={s.brandName}>e-Visa India</Text>
+                <Text style={s.brandSub}>Official Portal</Text>
               </View>
             </View>
           </View>
@@ -104,7 +108,7 @@ export default function TrackScreen() {
 
           {/* Footer */}
           <View style={s.footerMin}>
-            <Text style={s.footerCopy}>© {new Date().getFullYear()} Forge eVisa</Text>
+            <Text style={s.footerCopy}>© {new Date().getFullYear()} e-Visa India</Text>
             <Text style={s.footerDisc}>For final travel decisions, rely on the ETA sent to your registered email and official immigration guidance.</Text>
           </View>
         </ScrollView>
