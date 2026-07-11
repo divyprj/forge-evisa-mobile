@@ -1,18 +1,20 @@
 {
   "expo": {
-    "name": "forge-evisa-mobile",
-    "slug": "forge-evisa-mobile",
+    "name": "Forge eVisa",
+    "slug": "forge-evisa",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
-    "scheme": "forgeevisamobile",
-    "userInterfaceStyle": "automatic",
+    "scheme": "forge-evisa",
+    "userInterfaceStyle": "light",
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.forge.evisa"
     },
     "android": {
+      "package": "com.forge.evisa",
       "adaptiveIcon": {
-        "backgroundColor": "#E6F4FE",
+        "backgroundColor": "#173f35",
         "foregroundImage": "./assets/images/android-icon-foreground.png",
         "backgroundImage": "./assets/images/android-icon-background.png",
         "monochromeImage": "./assets/images/android-icon-monochrome.png"
@@ -31,9 +33,10 @@
         {
           "image": "./assets/images/splash-icon.png",
           "resizeMode": "contain",
-          "backgroundColor": "#ffffff"
+          "backgroundColor": "#fbfaf5"
         }
-      ]
+      ],
+      "expo-image"
     ],
     "experiments": {
       "typedRoutes": true

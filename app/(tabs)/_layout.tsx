@@ -1,68 +1,115 @@
-import { SymbolView } from 'expo-symbols';
-import { Link, Tabs } from 'expo-router';
-import { Platform, Pressable } from 'react-native';
+// Forge eVisa — Tab Layout
+import { Tabs, useRouter } from 'expo-router';
+import { Text, View, StyleSheet, Platform } from 'react-native';
 
-import Colors from '@/constants/Colors';
-import { useColorScheme } from '@/components/useColorScheme';
-import { useClientOnlyValue } from '@/components/useClientOnlyValue';
+const C = {
+  clay: '#c75f3d',
+  muted: '#676b63',
+  white: '#fffefa',
+  line: '#dedbcf',
+  forest: '#173f35',
+};
+
+function TabIcon({ name, focused }: { name: string; focused: boolean }) {
+  const icons: Record<string, string> = {
+    Home: '⌂',
+    Eligibility: '◈',
+    Apply: '✦',
+    Track: '◎',
+    Help: '?',
+  };
+  return (
+    <View style={[tabStyles.iconWrap, focused && tabStyles.iconActive]}>
+      <Text style={[tabStyles.icon, focused && tabStyles.iconFocused]}>
+        {icons[name] || '•'}
+      </Text>
+    </View>
+  );
+}
+
+const tabStyles = StyleSheet.create({
+  iconWrap: {
+    width: 36,
+    height: 28,
+    borderRadius: 14,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  iconActive: {
+    backgroundColor: 'rgba(199,95,61,0.1)',
+  },
+  icon: {
+    fontSize: 18,
+    color: C.muted,
+  },
+  iconFocused: {
+    color: C.clay,
+  },
+});
 
 export default function TabLayout() {
-  const colorScheme = useColorScheme();
+  const router = useRouter();
 
   return (
     <Tabs
       screenOptions={{
-        tabBarActiveTintColor: Colors[colorScheme].tint,
-        // Disable the static render of the header on web
-        // to prevent a hydration error in React Navigation v6.
-        headerShown: useClientOnlyValue(false, true),
-      }}>
+        headerShown: false,
+        tabBarActiveTintColor: C.clay,
+        tabBarInactiveTintColor: C.muted,
+        tabBarStyle: {
+          backgroundColor: C.white,
+          borderTopColor: C.line,
+          borderTopWidth: 1,
+          height: Platform.OS === 'ios' ? 88 : 64,
+          paddingTop: 6,
+          paddingBottom: Platform.OS === 'ios' ? 28 : 8,
+        },
+        tabBarLabelStyle: {
+          fontSize: 9,
+          fontWeight: '600',
+          letterSpacing: 0.3,
+        },
+      }}
+    >
       <Tabs.Screen
         name="index"
         options={{
-          title: 'Tab One',
-          tabBarIcon: ({ color }) => (
-            <SymbolView
-              name={{
-                ios: 'chevron.left.forwardslash.chevron.right',
-                android: 'code',
-                web: 'code',
-              }}
-              tintColor={color}
-              size={28}
-            />
-          ),
-          headerRight: () => (
-            <Link href="/modal" asChild>
-              <Pressable style={{ marginRight: 15 }}>
-                {({ pressed }) => (
-                  <SymbolView
-                    name={{ ios: 'info.circle', android: 'info', web: 'info' }}
-                    size={25}
-                    tintColor={Colors[colorScheme].text}
-                    style={{ opacity: pressed ? 0.5 : 1 }}
-                  />
-                )}
-              </Pressable>
-            </Link>
-          ),
+          title: 'Home',
+          tabBarIcon: ({ focused }) => <TabIcon name="Home" focused={focused} />,
         }}
       />
       <Tabs.Screen
-        name="two"
+        name="eligibility"
         options={{
-          title: 'Tab Two',
-          tabBarIcon: ({ color }) => (
-            <SymbolView
-              name={{
-                ios: 'chevron.left.forwardslash.chevron.right',
-                android: 'code',
-                web: 'code',
-              }}
-              tintColor={color}
-              size={28}
-            />
-          ),
+          title: 'Eligibility',
+          tabBarIcon: ({ focused }) => <TabIcon name="Eligibility" focused={focused} />,
+        }}
+      />
+      <Tabs.Screen
+        name="apply-tab"
+        options={{
+          title: 'Apply',
+          tabBarIcon: ({ focused }) => <TabIcon name="Apply" focused={focused} />,
+        }}
+        listeners={{
+          tabPress: (e) => {
+            e.preventDefault();
+            router.push('/apply');
+          },
+        }}
+      />
+      <Tabs.Screen
+        name="track"
+        options={{
+          title: 'Track',
+          tabBarIcon: ({ focused }) => <TabIcon name="Track" focused={focused} />,
+        }}
+      />
+      <Tabs.Screen
+        name="help"
+        options={{
+          title: 'Help',
+          tabBarIcon: ({ focused }) => <TabIcon name="Help" focused={focused} />,
         }}
       />
     </Tabs>
